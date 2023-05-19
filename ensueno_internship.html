@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Duplicate Character Remover</title>
+  <style>
+    .container {
+      margin: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    #output {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Duplicate Character Remover</h2>
+    <textarea id="inputText" placeholder="Enter your text here"></textarea>
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function removeDuplicates() {
+      var inputText = document.getElementById("inputText").value;
+      var uniqueChars = "";
+
+      for (var i = 0; i < inputText.length; i++) {
+        if (uniqueChars.indexOf(inputText[i]) === -1) {
+          uniqueChars += inputText[i];
+        }
+      }
+
+      document.getElementById("output").textContent = uniqueChars;
+    }
+  </script>
+</body>
+</html>
